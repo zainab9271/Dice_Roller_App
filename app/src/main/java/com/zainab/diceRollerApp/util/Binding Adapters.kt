@@ -4,11 +4,12 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.zainab.diceRollerApp.model.domain.DiceFace
 
 @BindingAdapter(value = ["app:diceSetup"])
-fun diceSetup(view: View, diceFace: List<Int>){
+fun diceSetup(view: View, diceFace: DiceFace?){
     if (view is ImageView)
-        view.setImageResource(diceFace[0])
+        diceFace?.let { view.setImageResource(it.diceFaceImageID) }
     else
-        (view as TextView).text = diceFace[1].toString()
+        (view as TextView).text = diceFace?.diceFaceNumber.toString()
 }
