@@ -1,7 +1,7 @@
 package com.zainab.diceRollerApp.model.repository
 
-import com.zainab.diceRollerApp.util.DiceFace
+import com.zainab.diceRollerApp.model.SetupDice
 
 object Repository {
-    fun getRandomDiceFace() = DiceFace.values().random().getADiceFace()
+    fun getRandomDiceFace() = SetupDice.getARandomDiceFace()
 }
